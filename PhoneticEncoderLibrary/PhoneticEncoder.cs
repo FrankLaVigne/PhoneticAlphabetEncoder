@@ -16,31 +16,46 @@ namespace PhoneticEncoderLibrary
             InitializeDictionary();
         }
 
+
         public string Encode(string inputString)
         {
             StringBuilder outputString = new StringBuilder();
 
             foreach (var character in inputString.ToUpper().ToCharArray())
             {
-
                 try
                 {
                     outputString.Append(this.alphabet[character]);
-
                 }
                 catch (Exception)
                 {
                     outputString.Append(character);
                 }
-
                 outputString.Append(" ");
-
-
             }
-
             return outputString.ToString();
         }
 
+        public string Decode(string inputString)
+        {
+            StringBuilder outputString = new StringBuilder();
+
+            var inputStringArray = inputString.Split(' ');
+
+
+            foreach (var word in inputStringArray)
+            {
+                try
+                {
+                    outputString.Append(word.ToCharArray()[0]);
+                }
+                catch (Exception)
+                {
+                    outputString.Append(" ");
+                }
+            }
+            return outputString.ToString();
+        }
 
         private void InitializeDictionary()
         {

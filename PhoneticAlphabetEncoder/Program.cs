@@ -17,13 +17,22 @@ namespace PhoneticAlphabetEncoder
             Console.WriteLine(plainText);
             Console.WriteLine(encodedText);
 
-            Console.WriteLine("Try it for yourself");
 
+            var roundtripText = phoneticEncoder.Decode(encodedText);
+
+
+            Console.WriteLine("Try it for yourself");
+            Console.WriteLine("**************************");
 
             var inputText =  Console.ReadLine();
+            var encodedInputText = phoneticEncoder.Encode(inputText);
 
-            Console.WriteLine(phoneticEncoder.Encode(inputText));
+            Console.WriteLine(encodedInputText);
+            Console.WriteLine("And decoded");
+            Console.WriteLine(phoneticEncoder.Decode(encodedInputText));
 
+
+            Console.WriteLine("**************************");
 
             Console.ReadLine();
             
