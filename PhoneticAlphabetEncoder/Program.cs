@@ -20,9 +20,9 @@ namespace PhoneticAlphabetEncoder
             Console.WriteLine("Try it for yourself");
 
 
-            var input =  Console.ReadLine();
+            var inputText =  Console.ReadLine();
 
-            Console.WriteLine(phoneticEncoder.Encode(plainText));
+            Console.WriteLine(phoneticEncoder.Encode(inputText));
 
 
             Console.ReadLine();
